@@ -36,3 +36,5 @@ Phần hiển thị tên tân thạc sĩ đã được nâng cấp dựa trên t
 - Tải nhạc nền không bản quyền (Canon in D) và tích hợp vào thiệp mời.
 - Thêm nút Bật/Tắt nhạc (music player) xoay hình tròn như đĩa than ở góc dưới.
 - Tự động bật nhạc khi khách mời chạm vào màn hình (vượt qua chính sách chặn Autoplay của trình duyệt).
+- Đổi nhạc nền sang bản Acoustic/Ukulele vui tươi, tích cực.
+- Thiết kế lại giao diện nút Music Player thành đĩa than (vinyl record) xoay tròn.

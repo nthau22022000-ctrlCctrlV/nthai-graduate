@@ -179,8 +179,18 @@
 
     <!-- FLOATING MUSIC BUTTON -->
     <button id="musicBtn" class="floating-music-btn hidden" title="Bật/Tắt Nhạc">
-      <svg viewBox="0 0 24 24" fill="currentColor" class="music-icon">
-        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      <svg viewBox="0 0 100 100" class="vinyl-record">
+        <!-- Outer record -->
+        <circle cx="50" cy="50" r="48" fill="#111" />
+        <!-- Grooves -->
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#222" stroke-width="1.5" />
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#222" stroke-width="1.5" />
+        <circle cx="50" cy="50" r="24" fill="none" stroke="#222" stroke-width="1.5" />
+        <!-- Center label -->
+        <circle cx="50" cy="50" r="16" fill="var(--burgundy)" />
+        <circle cx="50" cy="50" r="14" fill="none" stroke="var(--gold)" stroke-width="1" />
+        <!-- Center hole -->
+        <circle cx="50" cy="50" r="4" fill="#f8f4e6" />
       </svg>
       <div class="music-off-slash hidden"></div>
     </button>
