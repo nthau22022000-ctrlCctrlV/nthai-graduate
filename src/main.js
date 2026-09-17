@@ -1,0 +1,143 @@
+// Constants
+const EVENT_DATE = new Date('2026-09-27T08:00:00+07:00'); // Event is Sept 27, 2026 at 08:00 AM (Vietnam Time)
+
+// Elements
+const guestNameEl = document.getElementById('guestName');
+const openAdminBtn = document.getElementById('openAdminBtn');
+const backToCardBtn = document.getElementById('backToCardBtn');
+const invitationScreen = document.getElementById('invitation-screen');
+const adminScreen = document.getElementById('admin-screen');
+const generateLinkBtn = document.getElementById('generateLinkBtn');
+const newGuestNameInput = document.getElementById('newGuestName');
+const resultContainer = document.getElementById('resultContainer');
+const generatedLinkInput = document.getElementById('generatedLink');
+const copyLinkBtn = document.getElementById('copyLinkBtn');
+
+const showProgramBtn = document.getElementById('showProgramBtn');
+const programModal = document.getElementById('programModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+
+// Countdown Elements
+const daysEl = document.getElementById('cd-days');
+const hoursEl = document.getElementById('cd-hours');
+const minutesEl = document.getElementById('cd-minutes');
+const secondsEl = document.getElementById('cd-seconds');
+
+// Initialize App
+function init() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestName = urlParams.get('guest');
+
+  if (guestName) {
+    guestNameEl.textContent = guestName;
+  } else {
+    guestNameEl.textContent = 'Gia đình mình';
+  }
+
+  startCountdown();
+  setupEventListeners();
+}
+
+// Event Listeners
+function setupEventListeners() {
+  // Navigation
+  openAdminBtn.addEventListener('click', () => {
+    invitationScreen.classList.remove('active');
+    adminScreen.classList.remove('hidden');
+    adminScreen.classList.add('active');
+  });
+
+  backToCardBtn.addEventListener('click', () => {
+    adminScreen.classList.remove('active');
+    adminScreen.classList.add('hidden');
+    invitationScreen.classList.add('active');
+  });
+
+  // Generator
+  generateLinkBtn.addEventListener('click', () => {
+    const name = newGuestNameInput.value.trim();
+    if (!name) {
+      alert('Vui lòng nhập tên khách mời!');
+      return;
+    }
+    
+    const baseUrl = window.location.origin + window.location.pathname;
+    const link = `${baseUrl}?guest=${encodeURIComponent(name)}`;
+    
+    generatedLinkInput.value = link;
+    resultContainer.classList.remove('hidden');
+  });
+
+  // Copy Link
+  copyLinkBtn.addEventListener('click', () => {
+    generatedLinkInput.select();
+    generatedLinkInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    try {
+      navigator.clipboard.writeText(generatedLinkInput.value).then(() => {
+        const originalText = copyLinkBtn.textContent;
+        copyLinkBtn.textContent = 'Đã Copy!';
+        setTimeout(() => {
+          copyLinkBtn.textContent = originalText;
+        }, 2000);
+      });
+    } catch (err) {
+      // Fallback
+      document.execCommand('copy');
+      copyLinkBtn.textContent = 'Đã Copy!';
+      setTimeout(() => {
+        copyLinkBtn.textContent = 'Copy Link';
+      }, 2000);
+    }
+  });
+
+  // Modal
+  showProgramBtn.addEventListener('click', () => {
+    programModal.classList.add('active');
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    programModal.classList.remove('active');
+  });
+
+  // Close modal when clicking outside
+  programModal.addEventListener('click', (e) => {
+    if (e.target === programModal) {
+      programModal.classList.remove('active');
+    }
+  });
+}
+
+// Countdown logic
+function startCountdown() {
+  function updateTimer() {
+    const now = new Date().getTime();
+    const distance = EVENT_DATE.getTime() - now;
+
+    if (distance < 0) {
+      daysEl.textContent = "00";
+      hoursEl.textContent = "00";
+      minutesEl.textContent = "00";
+      secondsEl.textContent = "00";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    daysEl.textContent = days.toString().padStart(2, '0');
+    hoursEl.textContent = hours.toString().padStart(2, '0');
+    minutesEl.textContent = minutes.toString().padStart(2, '0');
+    secondsEl.textContent = seconds.toString().padStart(2, '0');
+  }
+
+  // Initial call
+  updateTimer();
+  // Update every second
+  setInterval(updateTimer, 1000);
+}
+
+// Run init
+init();
