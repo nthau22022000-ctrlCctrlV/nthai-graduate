@@ -341,6 +341,43 @@ body {
   letter-spacing: 1px;
 }
 
+/* Message Section */
+.message-section {
+  margin: 3rem 0;
+  padding: 0 0.5rem;
+  position: relative;
+  color: var(--cream);
+}
+
+.quote-icon {
+  font-size: 4rem;
+  color: var(--gold);
+  font-family: var(--font-serif);
+  line-height: 0;
+  opacity: 0.4;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.message-text {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.message-signature {
+  font-family: var(--font-script);
+  font-size: 2rem;
+  color: var(--gold);
+  text-align: right;
+  margin-top: 1.5rem;
+  opacity: 0.9;
+}
+
 /* Timeline / Program */
 .program-section {
   text-align: left;
