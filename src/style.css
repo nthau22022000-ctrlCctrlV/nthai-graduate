@@ -379,76 +379,109 @@ body {
 }
 
 /* Timeline / Program */
-.program-section {
-  text-align: left;
-  margin: 2rem 0;
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.05);
+.timeline-container {
+  margin: 2.5rem 0;
+  text-align: center;
 }
 
-.program-title {
+.timeline-title {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: var(--burgundy);
-  margin-bottom: 1.5rem;
-  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.timeline-title::after {
+  content: '';
+  display: block;
+  margin: 8px auto 0;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
 }
 
 .timeline {
   list-style: none;
   position: relative;
+  text-align: left;
 }
 
+/* Vertical line */
 .timeline::before {
   content: '';
   position: absolute;
-  left: 45px;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background-color: var(--gold);
+  left: 22px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), rgba(203,163,101,0.2));
+  border-radius: 2px;
 }
 
 .timeline li {
   display: flex;
-  margin-bottom: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1.4rem;
   position: relative;
 }
 
-.time-badge {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--burgundy);
-  background: #fff;
-  padding: 2px 8px;
-  border-radius: 10px;
-  border: 1px solid var(--gold);
+/* Dot on the line */
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2px solid var(--gold);
   z-index: 1;
-  min-width: 65px;
-  text-align: center;
-  align-self: flex-start;
-  margin-top: 2px;
+  box-shadow: 0 0 0 4px rgba(203,163,101,0.15);
+}
+
+.time-badge {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold);
+  min-width: 48px;
+  padding-top: 8px;
+  text-align: right;
+  padding-right: 10px;
+  flex-shrink: 0;
 }
 
 .timeline-content {
-  margin-left: 15px;
+  margin-left: 22px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(203,163,101,0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
   flex: 1;
+  backdrop-filter: blur(4px);
 }
 
 .timeline-content strong {
   display: block;
-  font-size: 0.95rem;
-  color: var(--text-dark);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--burgundy);
+  margin-bottom: 2px;
 }
 
 .timeline-content span {
   display: block;
-  font-size: 0.8rem;
-  color: #666;
-  margin-top: 3px;
+  font-size: 0.78rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 2px;
 }
+
 
 /* Contact Section */
 .contact-section {
