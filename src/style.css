@@ -324,6 +324,49 @@ body {
   margin-top: 3px;
 }
 
+/* Contact Section */
+.contact-section {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: rgba(203, 163, 101, 0.1);
+  border-radius: 12px;
+  border: 1px dashed var(--gold);
+}
+
+.contact-section p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.contact-name {
+  font-family: var(--font-serif);
+  font-size: 1.3rem !important;
+  color: var(--burgundy) !important;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.contact-phone {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--burgundy);
+  text-decoration: none;
+  background-color: #fff;
+  padding: 8px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.contact-phone:hover {
+  background-color: var(--burgundy);
+  color: var(--cream);
+  border-color: var(--burgundy);
+}
+
 /* Footer Msg */
 .footer-msg {
   font-size: 1rem;
