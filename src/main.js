@@ -55,6 +55,9 @@ function init() {
     document.addEventListener('touchstart', tryPlayMusic, { once: true });
     document.addEventListener('click', tryPlayMusic, { once: true });
     document.addEventListener('scroll', tryPlayMusic, { once: true });
+    
+    // Initialize Scroll Animations
+    setupScrollAnimations();
 
   } else {
     // Otherwise, show the link generator (Admin Screen)
@@ -186,5 +189,25 @@ function startCountdown() {
   setInterval(updateTimer, 1000);
 }
 
-// Run init
+// Scroll Animations
+function setupScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        // Optional: Stop observing once visible
+        // observer.unobserve(entry.target);
+      } else {
+        // Remove class to animate again when scrolling up/down
+        entry.target.classList.remove('is-visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+}
+
+// Start
 init();

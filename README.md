@@ -38,3 +38,4 @@ Phần hiển thị tên tân thạc sĩ đã được nâng cấp dựa trên t
 - Tự động bật nhạc khi khách mời chạm vào màn hình (vượt qua chính sách chặn Autoplay của trình duyệt).
 - Đổi nhạc nền sang bản Acoustic/Ukulele vui tươi, tích cực.
 - Thiết kế lại giao diện nút Music Player thành đĩa than (vinyl record) xoay tròn.
+- Bổ sung hiệu ứng cuộn mượt mà (Scroll Animations): lướt lên, lướt xuống, lướt ngang, và phóng to cho các cụm văn bản, thẻ và thông tin để tăng tính hiện đại và sinh động.

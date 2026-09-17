@@ -601,3 +601,21 @@ body {
 .hidden {
   display: none !important;
 }
+
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+.fade-up { transform: translateY(50px); }
+.fade-down { transform: translateY(-50px); }
+.fade-left { transform: translateX(50px); }
+.fade-right { transform: translateX(-50px); }
+.zoom-in { transform: scale(0.85); }
+
