@@ -11,6 +11,11 @@ const resultContainer = document.getElementById('resultContainer');
 const generatedLinkInput = document.getElementById('generatedLink');
 const copyLinkBtn = document.getElementById('copyLinkBtn');
 
+// Music Elements
+const bgm = document.getElementById('bgm');
+const musicBtn = document.getElementById('musicBtn');
+const musicSlash = document.querySelector('.music-off-slash');
+
 // Countdown Elements
 const daysEl = document.getElementById('cd-days');
 const hoursEl = document.getElementById('cd-hours');
@@ -33,6 +38,24 @@ function init() {
     
     // Shoot fireworks
     setTimeout(shootFireworks, 500);
+
+    // Music Player Setup
+    musicBtn.classList.remove('hidden');
+    const tryPlayMusic = () => {
+      bgm.play().then(() => {
+        musicBtn.classList.add('playing');
+        musicSlash.classList.add('hidden');
+        document.removeEventListener('touchstart', tryPlayMusic);
+        document.removeEventListener('click', tryPlayMusic);
+        document.removeEventListener('scroll', tryPlayMusic);
+      }).catch(e => console.log("Autoplay prevented pending interaction"));
+    };
+    
+    // Attempt to play on first interaction
+    document.addEventListener('touchstart', tryPlayMusic, { once: true });
+    document.addEventListener('click', tryPlayMusic, { once: true });
+    document.addEventListener('scroll', tryPlayMusic, { once: true });
+
   } else {
     // Otherwise, show the link generator (Admin Screen)
     invitationScreen.classList.remove('active');
@@ -92,6 +115,20 @@ function setupEventListeners() {
     
     generatedLinkInput.value = link;
     resultContainer.classList.remove('hidden');
+  });
+
+  // Music Button Toggle
+  musicBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (bgm.paused) {
+      bgm.play();
+      musicBtn.classList.add('playing');
+      musicSlash.classList.add('hidden');
+    } else {
+      bgm.pause();
+      musicBtn.classList.remove('playing');
+      musicSlash.classList.remove('hidden');
+    }
   });
 
   // Copy Link

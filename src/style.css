@@ -142,48 +142,100 @@ body {
 /* Torn paper section */
 .torn-paper-section {
   position: relative;
-  margin: 2rem 0;
+  isolation: isolate;
+  margin: 3rem 0;
 }
 
-.torn-edge-top, .torn-edge-bottom {
-  height: 20px;
-  width: 100%;
-  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23fbf7f0" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05c23.29,17.62,50.7,27.13,79.52,31.7,33.05,5.25,66.5,4,99.55-3.37C332.22,81.18,366.19,41.9,400.15,3.37,422.42-21.84,451.81-42.54,484.72-35c32.74,7.49,58.82,34.42,88.75,54.54,34.56,23.24,75.46,31.11,117.15,31.25,32,.12,64.21-6,93.63-18.75,34.69-15.08,66-38,103.2-46.68,34-7.85,69.34-5.18,103,4.45,34.55,9.85,65.8,29,100,38.63,22.24,6.26,46,6.34,68.7,2.5,21.57-3.62,41.74-12.72,61.42-22.18V0Z" fill="%23fbf7f0"/></svg>');
-  background-size: cover;
-  background-position: center;
+.torn-edge-top,
+.torn-edge-bottom {
   position: absolute;
   left: 0;
-  z-index: 2;
+  width: 100%;
+  height: 38px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  filter: drop-shadow(0 5px 4px rgba(37, 13, 12, 0.36));
+  pointer-events: none;
+  z-index: 4;
 }
 
 .torn-edge-top {
-  top: -19px;
-  transform: rotate(180deg);
+  top: -37px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fbf7f0' d='M0 0h1000v47l-18 4-15-8-20 14-19-4-13 15-23-9-22 12-18-5-26 18-19-13-26 10-18-19-29 11-20-7-19 14-25-5-17 13-26-15-21 6-17-11-25 14-19-8-22 9-28-17-23 12-20-18-29 13-22-6-20 15-24-10-18 6-25-17-29 14-23-11-20 8-28-15-22 9-25-14-23 10-28-13-24 5-26-12L0 66z'/%3E%3Cpath fill='%23eee6d8' opacity='.88' d='M0 61l29-10 26 12 24-5 28 13 23-10 25 14 22-9 28 15 20-8 23 11 29-14 25 17 18-6 24 10 20-15 22 6 29-13 20 18 23-12 28 17 22-9 19 8 25-14 17 11 21-6 26 15 17-13 25 5 19-14 20 7 29-11 18 19 26-10 19 13 26-18 18 5 22-12 23 9 13-15 19 4 20-14 15 8 18-4v8l-19 5-15-6-19 13-22-2-15 14-22-8-22 13-20-4-24 16-21-11-24 9-20-16-27 10-22-5-19 13-24-4-18 11-24-13-22 7-19-10-24 13-21-7-22 8-26-15-24 11-21-16-27 12-22-5-22 14-24-8-20 7-25-15-27 13-24-10-21 9-25-13-24 10-26-12-23 6-27-11L0 73z'/%3E%3C/svg%3E");
 }
 
 .torn-edge-bottom {
-  bottom: -19px;
+  bottom: -37px;
+  filter: drop-shadow(0 -4px 4px rgba(37, 13, 12, 0.3));
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fbf7f0' d='M0 34l26-8 22 13 29-7 21 16 25-11 22 8 27-13 18 17 30-10 21 15 24-20 26 11 19-13 27 8 21-16 25 14 24-6 20 19 28-12 19 9 26-16 25 13 20-8 22 15 29-9 20 17 27-14 20 7 26-12 19 15 27-8 22 13 23-17 24 10 28-8 22 17 25-12 24 7 23-14 28 11 25-16 21 9 26-13 20 10 27-14 24 9 24-12 25 14 27-8v74H0z'/%3E%3Cpath fill='%23eee6d8' opacity='.9' d='M0 28l26-8 22 13 29-7 21 16 25-11 22 8 27-13 18 17 30-10 21 15 24-20 26 11 19-13 27 8 21-16 25 14 24-6 20 19 28-12 19 9 26-16 25 13 20-8 22 15 29-9 20 17 27-14 20 7 26-12 19 15 27-8 22 13 23-17 24 10 28-8 22 17 25-12 24 7 23-14 28 11 25-16 21 9 26-13 20 10 27-14 24 9 24-12 25 14 27-8v11l-27 7-25-12-24 12-24-8-27 13-20-9-26 12-21-8-25 15-28-10-23 13-24-6-25 11-22-16-28 9-24-9-23 16-22-12-27 8-19-14-26 11-20-6-27 13-20-16-29 8-22-14-20 7-25-12-26 15-19-8-28 11-20-18-24 7-25-13-21 15-27-7-19 12-26-10-24 19-21-14-30 9-18-16-27 12-22-7-25 10-21-15-29 6-22-12-26 8z'/%3E%3C/svg%3E");
 }
 
 .dark-bg-content {
-  background-color: var(--burgundy);
+  position: relative;
+  min-height: 190px;
+  overflow: hidden;
+  background-color: #781b2a;
+  background-image:
+    radial-gradient(ellipse at 18% 24%, rgba(174, 55, 71, 0.32), transparent 38%),
+    radial-gradient(ellipse at 74% 72%, rgba(69, 4, 18, 0.3), transparent 46%),
+    linear-gradient(96deg, rgba(91, 12, 28, 0.42), transparent 24%, rgba(135, 28, 45, 0.2) 62%, rgba(54, 4, 14, 0.48)),
+    url("https://www.transparenttextures.com/patterns/cream-paper.png");
+  background-blend-mode: screen, multiply, multiply, soft-light;
   color: var(--cream);
-  padding: 2.5rem 1.5rem;
+  padding: 3.25rem 3rem 3rem 1.5rem;
   text-align: center;
+  box-shadow:
+    inset 0 15px 20px -18px rgba(24, 0, 5, 0.9),
+    inset 0 -14px 18px -18px rgba(24, 0, 5, 0.85);
+}
+
+.dark-bg-content::before {
+  content: "";
+  position: absolute;
+  inset: 0 24px 0 auto;
+  width: 34px;
+  background: linear-gradient(90deg, transparent, rgba(31, 0, 7, 0.58) 58%, rgba(17, 0, 3, 0.82));
+  filter: blur(4px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.dark-bg-content::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -5px;
+  bottom: -9px;
+  width: 31px;
+  border-left: 1px solid rgba(247, 189, 177, 0.36);
+  background:
+    linear-gradient(90deg, rgba(72, 5, 18, 0.96), rgba(161, 40, 57, 0.92) 45%, rgba(93, 10, 25, 0.98));
+  box-shadow: -8px 0 14px rgba(26, 0, 6, 0.62), inset 5px 0 7px rgba(255, 166, 147, 0.13);
+  transform: rotate(0.6deg);
+  pointer-events: none;
 }
 
 .role {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-serif);
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: var(--gold);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.65rem;
+  color: #f5ede2;
+  text-shadow: 0 1px 1px rgba(31, 0, 6, 0.35);
 }
 
 .grad-name {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-script);
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: clamp(3rem, 13vw, 4.15rem);
+  font-weight: 400;
+  line-height: 1.08;
+  color: #fffaf2;
+  text-shadow: 0 2px 2px rgba(34, 0, 8, 0.32);
 }
 
 /* Details Section */
@@ -498,6 +550,52 @@ body {
   border-radius: 4px;
   background: #fff;
   color: #555;
+}
+
+/* Music Player */
+.floating-music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--burgundy);
+  color: var(--cream);
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  padding: 0;
+}
+
+.floating-music-btn:hover {
+  transform: scale(1.1);
+}
+
+.floating-music-btn.playing {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.music-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.music-off-slash {
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: var(--cream);
+  transform: rotate(45deg);
 }
 
 .hidden {
