@@ -195,11 +195,8 @@ function setupScrollAnimations() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        // Optional: Stop observing once visible
-        // observer.unobserve(entry.target);
-      } else {
-        // Remove class to animate again when scrolling up/down
-        entry.target.classList.remove('is-visible');
+        // Stop observing once visible to prevent scroll jitter
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
