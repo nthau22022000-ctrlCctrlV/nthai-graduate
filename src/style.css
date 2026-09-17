@@ -59,16 +59,59 @@ body {
 /* Ornaments */
 .corner-ornament {
   position: absolute;
-  width: 52px;
-  height: 52px;
+  width: 66px;
+  height: 66px;
   color: var(--gold);
-  opacity: 0.65;
+  opacity: 0.72;
+  overflow: visible;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.65));
   pointer-events: none;
+  z-index: 0;
 }
-.top-left { top: 12px; left: 12px; }
-.top-right { top: 12px; right: 12px; }
-.bottom-left { bottom: 12px; left: 12px; }
-.bottom-right { bottom: 12px; right: 12px; }
+
+.corner-ornament .ornament-frame,
+.corner-ornament .ornament-stem {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.corner-ornament .ornament-frame {
+  stroke-width: 1.15;
+  opacity: 0.72;
+}
+
+.corner-ornament .ornament-stem {
+  stroke-width: 1.25;
+}
+
+.corner-ornament .ornament-leaf {
+  fill: currentColor;
+  opacity: 0.48;
+}
+
+.corner-ornament .ornament-bud {
+  fill: var(--cream);
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.corner-ornament .ornament-dot {
+  fill: var(--burgundy);
+  stroke: var(--cream);
+  stroke-width: 0.8;
+}
+
+.top-left { top: 10px; left: 10px; }
+.top-right { top: 10px; right: 10px; transform: scaleX(-1); }
+.bottom-left { bottom: 10px; left: 10px; transform: scaleY(-1); }
+.bottom-right { bottom: 10px; right: 10px; transform: scale(-1); }
+
+.card-inner > :not(.corner-ornament) {
+  position: relative;
+  z-index: 1;
+}
 
 /* Decor */
 .top-decor {
@@ -683,4 +726,3 @@ body {
 .fade-left { transform: translateX(50px); }
 .fade-right { transform: translateX(-50px); }
 .zoom-in { transform: scale(0.85); }
-
