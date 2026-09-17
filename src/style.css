@@ -341,6 +341,78 @@ body {
   color: #555;
 }
 
+/* Calendar */
+.calendar-container {
+  width: 100%;
+  max-width: 320px;
+  background: #fff;
+  border: 1px solid rgba(203,163,101,0.3);
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.calendar-month {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--burgundy);
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.cal-day-header {
+  font-weight: 600;
+  color: #888;
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+}
+
+.calendar-grid span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.cal-highlight {
+  background-color: var(--burgundy);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(114,28,36,0.3);
+}
+
+/* Map Container */
+.map-container {
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.map-link {
+  display: block;
+  background-color: var(--burgundy);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
 /* Countdown */
 .countdown-container {
   margin: 2rem 0;

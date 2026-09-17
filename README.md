@@ -49,3 +49,5 @@ Phần hiển thị tên tân thạc sĩ đã được nâng cấp dựa trên t
 - Nâng cấp hoa văn 4 góc: thay đường cong đơn giản bằng góc Art Deco có 2 lớp đường kẻ L (ngoài dày - trong mỏng), đường cong phụ mờ ảo và hình thoi nhỏ ở đỉnh góc.
 - Sắp xếp lại thứ tự nội dung: Chương trình → Lời cảm ơn → Thông tin liên hệ → Lời hồi âm (RSVP) → Footer.
 - Tái hiện lại 2 icon SVG theo mẫu: Mũ tốt nghiệp 3D đen-vàng (đầu trang) và Máy bay giấy origami viền vàng (chọn RSVP). Các thiết kế này được tạo hoàn toàn bằng SVG thuần và CSS gradients, không phụ thuộc file ảnh ngoài.
+- Bổ sung lịch tháng (tháng 9/2026) ngay bên dưới phần ngày tháng, khoanh đỏ ngày 27 để khách dễ hình dung.
+- Bổ sung bản đồ Google Maps hiển thị vị trí Hội trường B - Đại học Quy Nhơn, kèm nút "Mở trên Google Maps" tiện lợi.
