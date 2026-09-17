@@ -3,8 +3,6 @@ const EVENT_DATE = new Date('2026-09-27T08:00:00+07:00'); // Event is Sept 27, 2
 
 // Elements
 const guestNameEl = document.getElementById('guestName');
-const openAdminBtn = document.getElementById('openAdminBtn');
-const backToCardBtn = document.getElementById('backToCardBtn');
 const invitationScreen = document.getElementById('invitation-screen');
 const adminScreen = document.getElementById('admin-screen');
 const generateLinkBtn = document.getElementById('generateLinkBtn');
@@ -26,33 +24,29 @@ const secondsEl = document.getElementById('cd-seconds');
 // Initialize App
 function init() {
   const urlParams = new URLSearchParams(window.location.search);
-  const guestName = urlParams.get('guest');
+  const inviteName = urlParams.get('invite');
 
-  if (guestName) {
-    guestNameEl.textContent = guestName;
+  if (inviteName) {
+    // If there is an invite parameter, show the invitation
+    guestNameEl.textContent = inviteName;
+    adminScreen.classList.add('hidden');
+    adminScreen.classList.remove('active');
+    invitationScreen.classList.remove('hidden');
+    invitationScreen.classList.add('active');
+    startCountdown();
   } else {
-    guestNameEl.textContent = 'Gia đình mình';
+    // Otherwise, show the link generator (Admin Screen)
+    invitationScreen.classList.remove('active');
+    invitationScreen.classList.add('hidden');
+    adminScreen.classList.remove('hidden');
+    adminScreen.classList.add('active');
   }
 
-  startCountdown();
   setupEventListeners();
 }
 
 // Event Listeners
 function setupEventListeners() {
-  // Navigation
-  openAdminBtn.addEventListener('click', () => {
-    invitationScreen.classList.remove('active');
-    adminScreen.classList.remove('hidden');
-    adminScreen.classList.add('active');
-  });
-
-  backToCardBtn.addEventListener('click', () => {
-    adminScreen.classList.remove('active');
-    adminScreen.classList.add('hidden');
-    invitationScreen.classList.add('active');
-  });
-
   // Generator
   generateLinkBtn.addEventListener('click', () => {
     const name = newGuestNameInput.value.trim();
@@ -62,7 +56,7 @@ function setupEventListeners() {
     }
     
     const baseUrl = window.location.origin + window.location.pathname;
-    const link = `${baseUrl}?guest=${encodeURIComponent(name)}`;
+    const link = `${baseUrl}?invite=${encodeURIComponent(name)}`;
     
     generatedLinkInput.value = link;
     resultContainer.classList.remove('hidden');
