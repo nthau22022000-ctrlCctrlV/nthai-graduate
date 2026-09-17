@@ -10,6 +10,28 @@ const newGuestNameInput = document.getElementById('newGuestName');
 const resultContainer = document.getElementById('resultContainer');
 const generatedLinkInput = document.getElementById('generatedLink');
 const copyLinkBtn = document.getElementById('copyLinkBtn');
+const rsvpForm = document.getElementById('rsvpForm');
+const rsvpError = document.getElementById('rsvpError');
+const rsvpResponse = document.getElementById('rsvpResponse');
+const rsvpResponseTitle = document.getElementById('rsvpResponseTitle');
+const rsvpResponseMessage = document.getElementById('rsvpResponseMessage');
+const momoGift = document.getElementById('momoGift');
+const changeRsvpBtn = document.getElementById('changeRsvpBtn');
+
+const RSVP_RESPONSES = {
+  yes: {
+    title: 'Hải vui muốn xỉu luôn!',
+    message: 'Cảm ơn bạn thật nhiều vì đã dành thời gian đến chung vui. Có bạn ở đó, ngày đặc biệt này chắc chắn sẽ trọn vẹn hơn rất nhiều. Hẹn gặp bạn nhé!'
+  },
+  maybe: {
+    title: 'Cố gắng đến với Hải nhaaa!',
+    message: 'Hải năn nỉ một xíu thôi đó. Sắp xếp được thì ghé chung vui và chụp với Hải thật nhiều ảnh nhé. Hải vẫn để dành một chỗ và mong tin vui từ bạn!'
+  },
+  no: {
+    title: 'Hải hơi buồn một xíu...',
+    message: 'Tiếc là ngày vui này thiếu bạn, nhưng Hải hiểu mà. Cảm ơn bạn đã dành thời gian hồi âm và gửi lời chúc từ xa. Tình cảm của bạn vẫn đáng quý thật nhiều!'
+  }
+};
 
 // Music Elements
 const bgm = document.getElementById('bgm');
@@ -155,6 +177,49 @@ function setupEventListeners() {
         copyLinkBtn.textContent = 'Copy Link';
       }, 2000);
     }
+  });
+
+  // RSVP is intentionally local-only and does not submit or persist data.
+  rsvpForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const selection = rsvpForm.querySelector('input[name="attendance"]:checked');
+    if (!selection) {
+      rsvpError.classList.remove('hidden');
+      return;
+    }
+
+    const response = RSVP_RESPONSES[selection.value];
+    rsvpError.classList.add('hidden');
+    rsvpResponseTitle.textContent = response.title;
+    rsvpResponseMessage.textContent = response.message;
+    rsvpResponse.dataset.answer = selection.value;
+    momoGift.classList.toggle('hidden', selection.value !== 'no');
+    rsvpForm.classList.add('hidden');
+    rsvpResponse.classList.remove('hidden');
+
+    if (selection.value === 'yes' && typeof confetti === 'function') {
+      confetti({
+        particleCount: 80,
+        spread: 75,
+        startVelocity: 28,
+        gravity: 0.8,
+        origin: { y: 0.72 },
+        colors: ['#721c24', '#cba365', '#fffaf2']
+      });
+    }
+
+    rsvpResponse.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  rsvpForm.addEventListener('change', () => {
+    rsvpError.classList.add('hidden');
+  });
+
+  changeRsvpBtn.addEventListener('click', () => {
+    rsvpResponse.classList.add('hidden');
+    rsvpForm.classList.remove('hidden');
+    rsvpForm.querySelector('input[name="attendance"]:checked')?.focus();
   });
 }
 

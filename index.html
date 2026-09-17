@@ -178,6 +178,83 @@
               </li>
             </ul>
           </div>
+
+          <section class="rsvp-section animate-on-scroll fade-up" aria-labelledby="rsvpTitle">
+            <div class="rsvp-heading">
+              <span class="rsvp-kicker">Một lời hồi âm</span>
+              <h3 id="rsvpTitle">Bạn có thể đến chung vui không?</h3>
+              <p>Chọn câu trả lời gần nhất với bạn lúc này nhé.</p>
+            </div>
+
+            <form id="rsvpForm" class="rsvp-form">
+              <fieldset>
+                <legend class="sr-only">Khả năng tham dự lễ tốt nghiệp</legend>
+
+                <label class="rsvp-option">
+                  <input type="radio" name="attendance" value="yes" />
+                  <span class="rsvp-option-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+                  </span>
+                  <span class="rsvp-option-copy">
+                    <strong>Mình sẽ tham gia</strong>
+                    <small>Nhất định đến chung vui cùng Hải</small>
+                  </span>
+                </label>
+
+                <label class="rsvp-option">
+                  <input type="radio" name="attendance" value="maybe" />
+                  <span class="rsvp-option-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M9.5 9a2.7 2.7 0 1 1 4.2 2.25c-1.12.74-1.7 1.15-1.7 2.75M12 18h.01"/></svg>
+                  </span>
+                  <span class="rsvp-option-copy">
+                    <strong>Mình chưa biết nữa</strong>
+                    <small>Cần thêm một chút thời gian để sắp xếp</small>
+                  </span>
+                </label>
+
+                <label class="rsvp-option">
+                  <input type="radio" name="attendance" value="no" />
+                  <span class="rsvp-option-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7 7 17"/></svg>
+                  </span>
+                  <span class="rsvp-option-copy">
+                    <strong>Mình không tham gia được</strong>
+                    <small>Tiếc là mình có lịch mất rồi</small>
+                  </span>
+                </label>
+              </fieldset>
+
+              <p id="rsvpError" class="rsvp-error hidden">Bạn chọn giúp Hải một câu trả lời nha.</p>
+              <button type="submit" class="rsvp-submit">Gửi lời hồi âm</button>
+            </form>
+
+            <div id="rsvpResponse" class="rsvp-response hidden" role="status" aria-live="polite">
+              <div class="rsvp-response-mark" aria-hidden="true"></div>
+              <h4 id="rsvpResponseTitle"></h4>
+              <p id="rsvpResponseMessage"></p>
+
+              <div id="momoGift" class="momo-gift hidden">
+                <div class="momo-account-mark" aria-hidden="true">
+                  <span>M</span>
+                </div>
+                <div class="momo-gift-copy">
+                  <strong>Gửi một chút yêu thương từ xa</strong>
+                  <dl class="momo-account-details">
+                    <div>
+                      <dt>Tài khoản</dt>
+                      <dd>MoMo - Nguyễn Thị Hải</dd>
+                    </div>
+                    <div>
+                      <dt>Số điện thoại</dt>
+                      <dd><a href="tel:0982895325">0982 895 325</a></dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <button id="changeRsvpBtn" type="button" class="rsvp-change-btn">Đổi câu trả lời</button>
+            </div>
+          </section>
           
           <!-- Lời tự sự & Cảm ơn -->
           <div class="message-section animate-on-scroll fade-up">
