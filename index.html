@@ -38,19 +38,56 @@
           </svg>
           
           <div class="top-decor animate-on-scroll fade-down">
-            <!-- Minimal graduation cap -->
-            <svg class="cap-icon" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Board -->
-              <polygon points="32,4 60,18 32,26 4,18" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.08" stroke-linejoin="round"/>
-              <!-- Cap body -->
-              <path d="M14,18 L14,34 Q14,40 32,42 Q50,40 50,34 L50,18" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.06" stroke-linejoin="round"/>
-              <!-- Tassel cord -->
-              <line x1="60" y1="18" x2="60" y2="36" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <!-- Tassel -->
-              <circle cx="60" cy="37" r="2" fill="currentColor"/>
-              <line x1="58" y1="39" x2="56" y2="46" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              <line x1="60" y1="39" x2="60" y2="47" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              <line x1="62" y1="39" x2="64" y2="46" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            <!-- Premium 3D Graduation Cap -->
+            <svg class="cap-icon-3d" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="goldCap" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F2D780" />
+                  <stop offset="25%" stop-color="#C59C46" />
+                  <stop offset="50%" stop-color="#FDF1B0" />
+                  <stop offset="75%" stop-color="#B28228" />
+                  <stop offset="100%" stop-color="#E1BE63" />
+                </linearGradient>
+                <linearGradient id="blackCap" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#2a2a2a" />
+                  <stop offset="100%" stop-color="#0a0a0a" />
+                </linearGradient>
+                <filter id="capShadow" x="-10%" y="-10%" width="130%" height="130%">
+                  <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.25" />
+                </filter>
+              </defs>
+
+              <g filter="url(#capShadow)">
+                <!-- Cap bottom/inside -->
+                <path d="M30,45 L30,65 L60,78 L90,65 L90,45 Z" fill="url(#blackCap)" stroke="url(#goldCap)" stroke-width="1.5" stroke-linejoin="round"/>
+                
+                <!-- Inner fold line -->
+                <path d="M35,50 L35,63 L60,73 L85,63 L85,50" fill="none" stroke="url(#goldCap)" stroke-width="1" opacity="0.6"/>
+
+                <!-- Top Board Base (Gold Border) -->
+                <polygon points="60,15 110,35 60,55 10,35" fill="url(#goldCap)" />
+                
+                <!-- Top Board Inner (Black) -->
+                <polygon points="60,16.5 107.5,35 60,53.5 12.5,35" fill="url(#blackCap)" />
+                
+                <!-- Add slight sheen -->
+                <polygon points="60,16.5 107.5,35 60,35 12.5,35" fill="#ffffff" opacity="0.04" />
+
+                <!-- Tassel string -->
+                <path d="M60,35 Q85,38 95,50" fill="none" stroke="url(#goldCap)" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M60,35 Q85,38 95,50" fill="none" stroke="#fff" stroke-width="0.5" opacity="0.5" stroke-linecap="round" />
+
+                <!-- Center button -->
+                <circle cx="60" cy="35" r="3.5" fill="url(#goldCap)" />
+                <circle cx="59" cy="34" r="1" fill="#fff" opacity="0.5" />
+
+                <!-- Tassel knot -->
+                <circle cx="95" cy="52" r="3.5" fill="url(#goldCap)" />
+                <circle cx="94" cy="51" r="1" fill="#fff" opacity="0.5" />
+                
+                <!-- Tassel fringes -->
+                <path d="M92,54 L90,70 M93,55 L92,72 M94.5,55 L94,73 M95.5,55 L96,73 M97,55 L98,72 M98,54 L100,70" stroke="url(#goldCap)" stroke-width="1.2" stroke-linecap="round" />
+              </g>
             </svg>
 
             <!-- Delicate laurel + divider -->
@@ -199,6 +236,25 @@
 
           <section class="rsvp-section animate-on-scroll fade-up" aria-labelledby="rsvpTitle">
             <div class="rsvp-heading">
+              <svg class="plane-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="goldPlane" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#F2D780" />
+                    <stop offset="25%" stop-color="#C59C46" />
+                    <stop offset="50%" stop-color="#FDF1B0" />
+                    <stop offset="75%" stop-color="#B28228" />
+                    <stop offset="100%" stop-color="#E1BE63" />
+                  </linearGradient>
+                  <filter id="planeShadow" x="-10%" y="-10%" width="130%" height="130%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#cba365" flood-opacity="0.3" />
+                  </filter>
+                </defs>
+                <g filter="url(#planeShadow)">
+                  <path d="M10,45 L90,20 L65,75 L30,55 Z" stroke="url(#goldPlane)" stroke-width="2.5" stroke-linejoin="round"/>
+                  <path d="M90,20 L30,55" stroke="url(#goldPlane)" stroke-width="2.5" stroke-linejoin="round"/>
+                  <path d="M30,55 L35,75 L45,63" stroke="url(#goldPlane)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+                </g>
+              </svg>
               <span class="rsvp-kicker">Một lời hồi âm</span>
               <h3 id="rsvpTitle">Bạn có thể đến chung vui không?</h3>
               <p>Chọn câu trả lời gần nhất với bạn lúc này nhé.</p>

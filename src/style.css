@@ -122,11 +122,16 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.cap-icon {
-  width: 56px;
-  height: 42px;
-  color: var(--burgundy);
-  opacity: 0.8;
+.cap-icon-3d {
+  width: 90px;
+  height: 90px;
+  margin-bottom: -15px;
+  animation: hover-float 4s ease-in-out infinite;
+}
+
+@keyframes hover-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 .mini-laurel {
