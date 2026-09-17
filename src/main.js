@@ -48,7 +48,6 @@ function init() {
 function shootFireworks() {
   const duration = 5 * 1000;
   const animationEnd = Date.now() + duration;
-  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
 
   function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
@@ -61,11 +60,20 @@ function shootFireworks() {
       return clearInterval(interval);
     }
 
-    const particleCount = 50 * (timeLeft / duration);
-    // since particles fall down, start a bit higher than random
-    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
-  }, 250);
+    // Bắn từng đợt (waves) ở nửa trên màn hình
+    confetti({
+      particleCount: 80,
+      startVelocity: 35,
+      spread: 360,
+      ticks: 80,
+      origin: { 
+        x: randomInRange(0.2, 0.8), // Random theo chiều ngang
+        y: randomInRange(0.1, 0.3)  // Chỉ nằm ở phần đầu màn hình
+      },
+      zIndex: 100,
+      colors: ['#721c24', '#cba365', '#ffffff', '#ffdb58', '#ff3800']
+    });
+  }, 700); // Bắn mỗi 0.7s để tạo cảm giác từng đợt vừa phải
 }
 
 // Event Listeners
