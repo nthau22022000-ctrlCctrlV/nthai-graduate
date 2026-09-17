@@ -94,9 +94,16 @@ body {
 }
 
 .cap-icon {
-  width: 55px;
-  height: 55px;
+  width: 72px;
+  height: 72px;
   color: var(--burgundy);
+  filter: drop-shadow(0 4px 8px rgba(114,28,36,0.2));
+  animation: float-cap 3s ease-in-out infinite;
+}
+
+@keyframes float-cap {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
 }
 
 .star-decor {

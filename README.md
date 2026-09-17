@@ -44,3 +44,4 @@ Phần hiển thị tên tân thạc sĩ đã được nâng cấp dựa trên t
 - Thêm phần "Lời Tự Sự & Lời Cảm Ơn" với nội dung chân thành, sâu lắng.
 - Định dạng chữ và canh lề chuẩn phong cách thiệp cưới/sự kiện cao cấp với dấu ngoặc kép trích dẫn cách điệu.
 - Thiết kế lại phần Chương trình chi tiết theo phong cách timeline cao cấp: đường kẻ dọc gradient vàng, chấm tròn bo viền vàng, thẻ nội dung có nền mờ (glassmorphism), typography serif cho tiêu đề mỗi mục.
+- Nâng cấp icon mũ tốt nghiệp: vẽ lại 3D isometric có mặt bảng, thân mũ, dây tua và chùm tua rua; thêm hiệu ứng bóng đổ và hoạt ảnh lướt nhẹ (floating) vô cùng tinh tế.
