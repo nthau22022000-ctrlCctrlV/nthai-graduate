@@ -59,16 +59,16 @@ body {
 /* Ornaments */
 .corner-ornament {
   position: absolute;
-  width: 45px;
-  height: 45px;
+  width: 52px;
+  height: 52px;
   color: var(--gold);
-  opacity: 0.5;
+  opacity: 0.65;
   pointer-events: none;
 }
-.top-left { top: 15px; left: 15px; }
-.top-right { top: 15px; right: 15px; }
-.bottom-left { bottom: 15px; left: 15px; }
-.bottom-right { bottom: 15px; right: 15px; }
+.top-left { top: 12px; left: 12px; }
+.top-right { top: 12px; right: 12px; }
+.bottom-left { bottom: 12px; left: 12px; }
+.bottom-right { bottom: 12px; right: 12px; }
 
 /* Decor */
 .top-decor {
