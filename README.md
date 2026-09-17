@@ -39,3 +39,4 @@ Phần hiển thị tên tân thạc sĩ đã được nâng cấp dựa trên t
 - Đổi nhạc nền sang bản Acoustic/Ukulele vui tươi, tích cực.
 - Thiết kế lại giao diện nút Music Player thành đĩa than (vinyl record) xoay tròn.
 - Bổ sung hiệu ứng cuộn mượt mà (Scroll Animations): lướt lên, lướt xuống, lướt ngang, và phóng to cho các cụm văn bản, thẻ và thông tin để tăng tính hiện đại và sinh động.
+- Tinh chỉnh hiệu ứng lướt (staggered animation) cho Chương trình chi tiết: Các mốc thời gian sẽ lần lượt lướt vào từ trái sang phải vô cùng mượt mà và tuần tự.
