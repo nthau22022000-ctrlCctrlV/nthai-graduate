@@ -60,12 +60,13 @@ function shootFireworks() {
       return clearInterval(interval);
     }
 
-    // Bắn từng đợt (waves) ở nửa trên màn hình
+    // Bắn từng đợt chậm hơn (waves) ở nửa trên màn hình
     confetti({
-      particleCount: 80,
-      startVelocity: 35,
+      particleCount: 60,
+      startVelocity: 22,
       spread: 360,
-      ticks: 80,
+      ticks: 120,
+      gravity: 0.6,
       origin: { 
         x: randomInRange(0.2, 0.8), // Random theo chiều ngang
         y: randomInRange(0.1, 0.3)  // Chỉ nằm ở phần đầu màn hình
@@ -73,7 +74,7 @@ function shootFireworks() {
       zIndex: 100,
       colors: ['#721c24', '#cba365', '#ffffff', '#ffdb58', '#ff3800']
     });
-  }, 700); // Bắn mỗi 0.7s để tạo cảm giác từng đợt vừa phải
+  }, 1200); // Bắn mỗi 1.2s để tạo cảm giác chậm rãi, thong thả
 }
 
 // Event Listeners
