@@ -47,3 +47,4 @@ Phần hiển thị tên tân thạc sĩ đã được nâng cấp dựa trên t
 - Nâng cấp icon mũ tốt nghiệp: vẽ lại 3D isometric có mặt bảng, thân mũ, dây tua và chùm tua rua; thêm hiệu ứng bóng đổ và hoạt ảnh lướt nhẹ (floating) vô cùng tinh tế.
 - Tinh chỉnh theo nguyên tắc thiết kế thiệp sang trọng: thay mũ 3D phức tạp bằng mũ cử nhân nét mảnh tối giản; thay bộ lá lớn + sao bằng cành nguyệt quế nhỏ nhắn ôm bên dưới. Một điểm nhấn chính, một họa tiết phụ.
 - Nâng cấp hoa văn 4 góc: thay đường cong đơn giản bằng góc Art Deco có 2 lớp đường kẻ L (ngoài dày - trong mỏng), đường cong phụ mờ ảo và hình thoi nhỏ ở đỉnh góc.
+- Sắp xếp lại thứ tự nội dung: Chương trình → Lời cảm ơn → Thông tin liên hệ → Lời hồi âm (RSVP) → Footer.
