@@ -11,10 +11,6 @@ const resultContainer = document.getElementById('resultContainer');
 const generatedLinkInput = document.getElementById('generatedLink');
 const copyLinkBtn = document.getElementById('copyLinkBtn');
 
-const showProgramBtn = document.getElementById('showProgramBtn');
-const programModal = document.getElementById('programModal');
-const closeModalBtn = document.getElementById('closeModalBtn');
-
 // Countdown Elements
 const daysEl = document.getElementById('cd-days');
 const hoursEl = document.getElementById('cd-hours');
@@ -82,22 +78,6 @@ function setupEventListeners() {
       setTimeout(() => {
         copyLinkBtn.textContent = 'Copy Link';
       }, 2000);
-    }
-  });
-
-  // Modal
-  showProgramBtn.addEventListener('click', () => {
-    programModal.classList.add('active');
-  });
-
-  closeModalBtn.addEventListener('click', () => {
-    programModal.classList.remove('active');
-  });
-
-  // Close modal when clicking outside
-  programModal.addEventListener('click', (e) => {
-    if (e.target === programModal) {
-      programModal.classList.remove('active');
     }
   });
 }
