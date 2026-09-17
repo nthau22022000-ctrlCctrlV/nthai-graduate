@@ -53,7 +53,22 @@ body {
 .card-inner {
   padding: 2rem 1.5rem;
   text-align: center;
+  position: relative;
 }
+
+/* Ornaments */
+.corner-ornament {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  color: var(--gold);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.top-left { top: 15px; left: 15px; }
+.top-right { top: 15px; right: 15px; }
+.bottom-left { bottom: 15px; left: 15px; }
+.bottom-right { bottom: 15px; right: 15px; }
 
 /* Decor */
 .top-decor {
@@ -62,11 +77,25 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
+  z-index: 1;
+}
+
+.cap-wreath-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.wreath-icon {
+  width: 25px;
+  height: 50px;
+  color: var(--gold);
 }
 
 .cap-icon {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   color: var(--burgundy);
 }
 
@@ -100,6 +129,14 @@ body {
   letter-spacing: 2px;
   margin-top: 1rem;
   text-transform: uppercase;
+}
+
+.ribbon-decor {
+  width: 120px;
+  height: 20px;
+  color: var(--gold);
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
 /* Torn paper section */
