@@ -80,6 +80,9 @@ function init() {
     
     // Initialize Scroll Animations
     setupScrollAnimations();
+    
+    // Initialize Calendar
+    setupCalendar();
 
   } else {
     // Otherwise, show the link generator (Admin Screen)
@@ -268,6 +271,79 @@ function setupScrollAnimations() {
 
   document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
+  });
+}
+
+// Calendar Logic
+function setupCalendar() {
+  const calendarGrid = document.getElementById('calendarGrid');
+  const calendarMonthLabel = document.getElementById('calendarMonthLabel');
+  const prevBtn = document.getElementById('prevMonthBtn');
+  const nextBtn = document.getElementById('nextMonthBtn');
+  
+  if (!calendarGrid || !calendarMonthLabel) return;
+
+  const targetDate = new Date('2026-09-27T08:00:00+07:00');
+  let currentMonth = targetDate.getMonth();
+  let currentYear = targetDate.getFullYear();
+
+  function renderCalendar(month, year) {
+    calendarGrid.innerHTML = '<span class="cal-day-header">T2</span><span class="cal-day-header">T3</span><span class="cal-day-header">T4</span><span class="cal-day-header">T5</span><span class="cal-day-header">T6</span><span class="cal-day-header">T7</span><span class="cal-day-header">CN</span>';
+    
+    calendarMonthLabel.textContent = `Tháng ${month + 1} - ${year}`;
+    
+    // Get day of week of first day (0 = Sun, 1 = Mon, ..., 6 = Sat)
+    let firstDay = new Date(year, month, 1).getDay();
+    // Convert to Monday=0, Sunday=6 index
+    firstDay = firstDay === 0 ? 6 : firstDay - 1;
+    
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const today = new Date();
+    
+    // Empty slots
+    for (let i = 0; i < firstDay; i++) {
+      const span = document.createElement('span');
+      span.className = 'cal-empty';
+      calendarGrid.appendChild(span);
+    }
+    
+    // Days
+    for (let i = 1; i <= daysInMonth; i++) {
+      const span = document.createElement('span');
+      span.textContent = i;
+      
+      // Highlight target date (Sept 27, 2026)
+      if (year === targetDate.getFullYear() && month === targetDate.getMonth() && i === targetDate.getDate()) {
+        span.classList.add('cal-highlight');
+      }
+      
+      // Highlight current date (today)
+      if (year === today.getFullYear() && month === today.getMonth() && i === today.getDate()) {
+        span.classList.add('cal-today');
+      }
+      
+      calendarGrid.appendChild(span);
+    }
+  }
+
+  renderCalendar(currentMonth, currentYear);
+
+  prevBtn.addEventListener('click', () => {
+    currentMonth--;
+    if (currentMonth < 0) {
+      currentMonth = 11;
+      currentYear--;
+    }
+    renderCalendar(currentMonth, currentYear);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentMonth++;
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+    renderCalendar(currentMonth, currentYear);
   });
 }
 

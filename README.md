@@ -51,3 +51,7 @@ Phần hiển thị tên tân thạc sĩ đã được nâng cấp dựa trên t
 - Tái hiện lại 2 icon SVG theo mẫu: Mũ tốt nghiệp 3D đen-vàng (đầu trang) và Máy bay giấy origami viền vàng (chọn RSVP). Các thiết kế này được tạo hoàn toàn bằng SVG thuần và CSS gradients, không phụ thuộc file ảnh ngoài.
 - Bổ sung lịch tháng (tháng 9/2026) ngay bên dưới phần ngày tháng, khoanh đỏ ngày 27 để khách dễ hình dung.
 - Bổ sung bản đồ Google Maps hiển thị vị trí Hội trường B - Đại học Quy Nhơn, kèm nút "Mở trên Google Maps" tiện lợi.
+- **Lịch tương tác (Interactive Calendar):** 
+  - Khách mời có thể bấm qua lại giữa các tháng (Tháng trước / Tháng sau).
+  - Tự động nhận diện và khoanh viền nhẹ ngày hiện tại (hôm nay).
+  - Luôn highlight ngày sự kiện (27/09/2026).

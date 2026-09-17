@@ -366,15 +366,38 @@ body {
   border-radius: 4px;
 }
 
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cal-nav-btn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.cal-nav-btn:hover {
+  opacity: 0.7;
+}
+
 .calendar-month {
   font-family: var(--font-serif);
   font-weight: 700;
   color: var(--burgundy);
   text-align: center;
-  margin-bottom: 12px;
   font-size: 1.1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
+  flex-grow: 1;
 }
 
 .calendar-grid {
@@ -409,6 +432,12 @@ body {
   color: var(--cream) !important;
   font-weight: 700;
   box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--gold);
+}
+
+.cal-today {
+  border: 1px solid var(--gold);
+  background-color: rgba(203, 163, 101, 0.1);
+  font-weight: 600;
 }
 
 /* Map Container */
